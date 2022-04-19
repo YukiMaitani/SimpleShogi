@@ -10,9 +10,11 @@ import UIKit
 class BoardView: UIView {
     
     let numberOfSquare = 5
+    var pieces = Set<Piece>()
 
     override func draw(_ rect: CGRect) {
         drawBoard(rect: rect)
+        drawPiece(rect: rect)
     }
     
     func drawBoard(rect:CGRect){
@@ -31,6 +33,17 @@ class BoardView: UIView {
             
             //描写
             path.stroke()
+        }
+    }
+    
+    func drawPiece(rect:CGRect){
+        //マスの長さ
+        let length = Int(rect.maxX)/numberOfSquare
+        let pieceMargin = 10
+        
+        for piece in pieces {
+            let pieceImage = UIImage(named: piece.imageName)
+            pieceImage?.draw(in: CGRect(x: piece.col * length + pieceMargin/2, y: piece.row * length + pieceMargin/2, width: length - pieceMargin, height: length - pieceMargin))
         }
     }
 

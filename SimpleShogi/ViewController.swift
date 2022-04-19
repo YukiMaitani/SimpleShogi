@@ -9,9 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var shogiEngine = ShogiEngine()
+    
+    @IBOutlet weak var boardView: BoardView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+        shogiEngine.initializeGame()
+        boardView.pieces = shogiEngine.pieces
+        boardView.setNeedsDisplay()
     }
 
 

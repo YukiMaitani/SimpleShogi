@@ -32,6 +32,9 @@
                             <constraint firstItem="6tx-mG-1Hm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="naH-uS-f8r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="boardView" destination="6tx-mG-1Hm" id="in8-2x-fu4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

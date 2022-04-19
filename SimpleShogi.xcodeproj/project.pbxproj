@@ -14,6 +14,8 @@
 		6DECE0A3280E5B0200D51C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DECE0A2280E5B0200D51C61 /* Assets.xcassets */; };
 		6DECE0A6280E5B0200D51C61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DECE0A4280E5B0200D51C61 /* LaunchScreen.storyboard */; };
 		6DECE0AE280E5BF500D51C61 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DECE0AD280E5BF500D51C61 /* BoardView.swift */; };
+		6DECE0B0280E9EE900D51C61 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DECE0AF280E9EE900D51C61 /* Piece.swift */; };
+		6DECE0B2280E9F6400D51C61 /* ShogiEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DECE0B1280E9F6400D51C61 /* ShogiEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		6DECE0A5280E5B0200D51C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DECE0A7280E5B0200D51C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DECE0AD280E5BF500D51C61 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		6DECE0AF280E9EE900D51C61 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		6DECE0B1280E9F6400D51C61 /* ShogiEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShogiEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				6DECE0A4280E5B0200D51C61 /* LaunchScreen.storyboard */,
 				6DECE0A7280E5B0200D51C61 /* Info.plist */,
 				6DECE0AD280E5BF500D51C61 /* BoardView.swift */,
+				6DECE0AF280E9EE900D51C61 /* Piece.swift */,
+				6DECE0B1280E9F6400D51C61 /* ShogiEngine.swift */,
 			);
 			path = SimpleShogi;
 			sourceTree = "<group>";
@@ -143,6 +149,8 @@
 			files = (
 				6DECE09E280E5AFC00D51C61 /* ViewController.swift in Sources */,
 				6DECE0AE280E5BF500D51C61 /* BoardView.swift in Sources */,
+				6DECE0B2280E9F6400D51C61 /* ShogiEngine.swift in Sources */,
+				6DECE0B0280E9EE900D51C61 /* Piece.swift in Sources */,
 				6DECE09A280E5AFC00D51C61 /* AppDelegate.swift in Sources */,
 				6DECE09C280E5AFC00D51C61 /* SceneDelegate.swift in Sources */,
 			);
