@@ -9,8 +9,9 @@ import UIKit
 
 class BoardView: UIView {
     
-    let numberOfSquare = 5
+    let numberOfSquare = 5  //盤の１辺のマス数
     var pieces = Set<Piece>()
+    var squareLength:Int!
 
     override func draw(_ rect: CGRect) {
         drawBoard(rect: rect)
@@ -38,13 +39,30 @@ class BoardView: UIView {
     
     func drawPiece(rect:CGRect){
         //マスの長さ
-        let length = Int(rect.maxX)/numberOfSquare
+        squareLength = Int(rect.maxX)/numberOfSquare
         let pieceMargin = 10
         
+        //駒の画像を配置
         for piece in pieces {
             let pieceImage = UIImage(named: piece.imageName)
-            pieceImage?.draw(in: CGRect(x: piece.col * length + pieceMargin/2, y: piece.row * length + pieceMargin/2, width: length - pieceMargin, height: length - pieceMargin))
+            pieceImage?.draw(in: CGRect(x: piece.col * squareLength + pieceMargin/2, y: piece.row * squareLength + pieceMargin/2, width: squareLength - pieceMargin, height: squareLength - pieceMargin))
         }
+    }
+    
+    //タッチした時の盤内の座標
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let first = touches.first!
+        let fromCol = Int(first.location(in: self).x)/squareLength
+        let fromRow = Int(first.location(in: self).y)/squareLength
+        print("form:(\(fromCol),\(fromRow))")
+    }
+    
+    //タッチが離れた時の盤内の座標
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let first = touches.first!
+        let toCol = Int(first.location(in: self).x)/squareLength
+        let toRow = Int(first.location(in: self).y)/squareLength
+        print("to:(\(toCol),\(toRow))")
     }
 
 }
