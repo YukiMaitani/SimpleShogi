@@ -12,6 +12,9 @@ class BoardView: UIView {
     let numberOfSquare = 5  //盤の１辺のマス数
     var pieces = Set<Piece>()
     var squareLength:Int!
+    var delegate:BoardViewDelegate?
+    var fromCol:Int = -1
+    var fromRow:Int = -1
 
     override func draw(_ rect: CGRect) {
         drawBoard(rect: rect)
@@ -52,17 +55,17 @@ class BoardView: UIView {
     //タッチした時の盤内の座標
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let first = touches.first!
-        let fromCol = Int(first.location(in: self).x)/squareLength
-        let fromRow = Int(first.location(in: self).y)/squareLength
-        print("form:(\(fromCol),\(fromRow))")
+        fromCol = Int(first.location(in: self).x)/squareLength
+        fromRow = Int(first.location(in: self).y)/squareLength
     }
     
     //タッチが離れた時の盤内の座標
+    //デリゲートを使ってコントローラーに通知
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let first = touches.first!
         let toCol = Int(first.location(in: self).x)/squareLength
         let toRow = Int(first.location(in: self).y)/squareLength
-        print("to:(\(toCol),\(toRow))")
+        delegate?.movePiece(fromCol: fromCol, fromRow: fromRow, toCol: toCol, toRow: toRow)
     }
 
 }

@@ -10,6 +10,23 @@ import Foundation
 struct ShogiEngine{
     var pieces = Set<Piece>()
     
+    //駒の移動
+    mutating func movePiece(fromCol:Int, fromRow:Int, toCol:Int, toRow:Int){
+        guard let piece = pieceAt(col: fromCol, row: fromRow) else { return }
+        pieces.remove(piece)
+        pieces.insert(Piece(col: toCol, row: toRow, imageName: piece.imageName))
+    }
+    
+    //駒の特定
+    func pieceAt(col:Int, row:Int) -> Piece? {
+        for piece in pieces {
+            if piece.col == col && piece.row == row{
+                return piece
+            }
+        }
+        return nil
+    }
+    
     mutating func initializeGame(){
         pieces.removeAll()
         
